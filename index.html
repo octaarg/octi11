@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Octavio cumple 11 años</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#05163b;
+font-family:Arial,sans-serif;
+text-align:center;
+}
+
+img{
+width:100%;
+max-width:600px;
+display:block;
+margin:auto;
+}
+
+.seccion{
+max-width:600px;
+margin:auto;
+}
+
+.boton{
+display:inline-block;
+margin:15px auto 30px;
+padding:15px 25px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
+}
+
+.ubicacion{
+background:#ffc400;
+color:#001b5e;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+.contador{
+color:white;
+padding:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+.tiempo{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:15px;
+flex-wrap:wrap;
+}
+
+.caja{
+background:white;
+color:#001b5e;
+padding:10px;
+border-radius:10px;
+min-width:70px;
+}
+
+.numero{
+font-size:26px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="seccion">
+<img src="PORTADA.PNG">
+</div>
+
+<div class="seccion">
+<img src="TEMATICA.PNG">
+</div>
+
+<div class="seccion">
+<img src="FECHA.PNG">
+
+<div class="contador">
+
+⏳ Falta muy poco...
+
+<div class="tiempo">
+
+<div class="caja">
+<div id="dias" class="numero">0</div>
+Días
+</div>
+
+<div class="caja">
+<div id="horas" class="numero">0</div>
+Horas
+</div>
+
+<div class="caja">
+<div id="minutos" class="numero">0</div>
+Min
+</div>
+
+<div class="caja">
+<div id="segundos" class="numero">0</div>
+Seg
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="seccion">
+
+<img src="UBICACION.PNG">
+
+<a class="boton ubicacion"
+target="_blank"
+href="https://maps.app.goo.gl/HKQbtnnAtXBgKLPB9">
+
+📍 VER UBICACIÓN
+
+</a>
+
+</div>
+
+<div class="seccion">
+
+<img src="CONFIRMAR_ASISTENCIA.PNG">
+
+<a class="boton whatsapp"
+target="_blank"
+href="https://wa.me/5493571560447?text=Hola%20confirmo%20mi%20asistencia%20al%20cumple%20de%20Octavio">
+
+📲 CONFIRMAR ASISTENCIA
+
+</a>
+
+</div>
+
+<script>
+
+const fecha =
+new Date("June 27, 2026 17:00:00").getTime();
+
+setInterval(function(){
+
+const ahora = new Date().getTime();
+const distancia = fecha - ahora;
+
+const dias =
+Math.floor(distancia/(1000*60*60*24));
+
+const horas =
+Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+
+const minutos =
+Math.floor((distancia%(1000*60*60))/(1000*60));
+
+const segundos =
+Math.floor((distancia%(1000*60))/1000);
+
+document.getElementById("dias").innerHTML=dias;
+document.getElementById("horas").innerHTML=horas;
+document.getElementById("minutos").innerHTML=minutos;
+document.getElementById("segundos").innerHTML=segundos;
+
+},1000);
+
+</script>
+
+</body>
+</html>
